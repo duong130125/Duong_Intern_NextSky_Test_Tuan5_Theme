@@ -11,23 +11,15 @@
   "type": "header",
   "name": "t:general.header",
   "sections": {
-    "header": {
-      "type": "header",
-      "settings": {
-        "section_width": "stretch",
-        "color_scheme": "",
-        "enable_sticky": true,
-        "logo_text": "glozin",
-        "menu": "main-menu",
-        "enable_search": true,
-        "search_placeholder": "I'm looking for…",
-        "wishlist_link": "",
-        "wishlist_count": 0
-      }
-    },
     "top_header_qYkhLC": {
       "type": "top-header",
       "blocks": {
+        "announcement_x7eKkW": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Sign up for 10% off your first order. <strong>Sign Up</strong></p>"
+          }
+        },
         "announcement_DgQXCV": {
           "type": "announcement",
           "settings": {
@@ -48,6 +40,7 @@
         }
       },
       "block_order": [
+        "announcement_x7eKkW",
         "announcement_DgQXCV",
         "announcement_NMWnVR",
         "announcement_XTJDUD"
@@ -57,6 +50,21 @@
         "section_width": "stretch",
         "color_scheme": "",
         "autoplay_speed": 5
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "section_width": "stretch",
+        "color_scheme": "",
+        "enable_sticky": true,
+        "logo": "shopify://shop_images/logo.svg",
+        "logo_text": "glozin",
+        "menu": "main-menu",
+        "enable_search": true,
+        "search_placeholder": "I'm looking for…",
+        "wishlist_link": "",
+        "wishlist_count": 0
       }
     }
   },
