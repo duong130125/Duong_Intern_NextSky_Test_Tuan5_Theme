@@ -54,6 +54,19 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "menu_badge_9waDzp": {
+          "type": "menu_badge",
+          "settings": {
+            "menu_item": "Sale",
+            "badge_label": "HOT",
+            "badge_color": "#e53935"
+          }
+        }
+      },
+      "block_order": [
+        "menu_badge_9waDzp"
+      ],
       "settings": {
         "section_width": "stretch",
         "color_scheme": "",
