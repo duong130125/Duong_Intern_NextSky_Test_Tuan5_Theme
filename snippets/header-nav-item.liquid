@@ -1,0 +1,81 @@
+{% doc %}
+  Renders a navigation menu item with optional dropdown and badge.
+
+  @param {link} link - The menu link object
+  @param {object} section - The header section object
+  @param {number} [depth] - Current nesting depth
+{% enddoc %}
+
+{% liquid
+  assign depth = depth | default: 0
+  assign has_children = false
+  if link.links != blank
+    assign has_children = true
+  endif
+
+  assign badge_label = blank
+  assign badge_color = '#e53935'
+  for block in section.blocks
+    if block.type == 'menu_badge'
+      assign menu_item_title = block.settings.menu_item | strip | downcase
+      assign link_title = link.title | strip | downcase
+      if menu_item_title == link_title
+        assign badge_label = block.settings.badge_label
+        assign badge_color = block.settings.badge_color
+        break
+      endif
+    endif
+  endfor
+%}
+
+<li
+  class="header-nav__item{% if has_children %} header-nav__item--has-dropdown{% endif %}{% if badge_label != blank %} header-nav__item--badged{% endif %}"
+  {% if has_children %}
+    data-nav-dropdown
+  {% endif %}
+>
+  <a
+    href="{{ link.url }}"
+    class="header-nav__link{% if link.active %} header-nav__link--active{% endif %}"
+    {% if has_children %}
+      aria-haspopup="true"
+      aria-expanded="false"
+      data-nav-trigger
+    {% endif %}
+  >
+    {% if badge_label != blank %}
+      <span class="header-nav__badge" style="--badge-color: {{ badge_color }}">{{ badge_label | escape }}</span>
+    {% endif %}
+    <span class="header-nav__label">{{ link.title | escape }}</span>
+    {% if has_children %}
+      <span class="header-nav__chevron">{{ 'icon-chevron-down.svg' | inline_asset_content }}</span>
+    {% endif %}
+  </a>
+
+  {% if has_children %}
+    <div class="header-nav__dropdown" hidden data-nav-panel>
+      <ul class="header-nav__dropdown-list" role="menu">
+        {% for child_link in link.links %}
+          <li class="header-nav__dropdown-item" role="none">
+            {% if child_link.links != blank %}
+              <span class="header-nav__dropdown-heading">{{ child_link.title | escape }}</span>
+              <ul class="header-nav__sublist">
+                {% for grandchild_link in child_link.links %}
+                  <li>
+                    <a href="{{ grandchild_link.url }}" class="header-nav__dropdown-link" role="menuitem">
+                      {{ grandchild_link.title | escape }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a href="{{ child_link.url }}" class="header-nav__dropdown-link" role="menuitem">
+                {{ child_link.title | escape }}
+              </a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</li>

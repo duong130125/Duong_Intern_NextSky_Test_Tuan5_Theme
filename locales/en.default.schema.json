@@ -13,6 +13,7 @@
     "column": "Column",
     "content": "Content",
     "custom_section": "Custom section",
+    "faq": "FAQ",
     "fonts": "Fonts",
     "footer": "Footer",
     "group": "Group",
@@ -36,16 +37,27 @@
   "labels": {
     "alignment": "Alignment",
     "background": "Background",
+    "button_background": "Button background",
+    "button_label": "Button label",
+    "color_scheme": "Color scheme",
+    "description": "Description",
     "foreground": "Foreground",
     "grid_gap": "Grid spacing",
     "grid_item_width": "Grid item width",
+    "header_size": "Header size",
+    "heading": "Heading",
     "input_corner_radius": "Input corner radius",
     "layout_direction": "Layout direction",
     "menu": "Menu",
     "customer_account_menu": "Customer account menu",
     "padding": "Padding",
+    "padding_top": "Top",
+    "padding_bottom": "Bottom",
     "page_margin": "Page margin",
     "page_width": "Page width",
+    "remove_section_spacing": "Remove default space between sections",
+    "secondary_button_label": "Secondary button label",
+    "section_width": "Section width",
     "show_payment_icons": "Show payment icons",
     "text_style": "Text style",
     "text": "Text"
@@ -64,14 +76,190 @@
       "narrow": "Narrow",
       "wide": "Wide"
     },
+    "section_width": {
+      "default": "Default",
+      "fluid": "Fluid container",
+      "stretch": "Stretch width",
+      "full": "Full width"
+    },
     "size": {
       "large": "Large",
+      "medium": "Medium",
       "small": "Small"
     },
     "text_style": {
       "title": "Title",
       "subtitle": "Subtitle",
       "normal": "Normal text"
+    }
+  },
+  "sections": {
+    "all": {
+      "layout": {
+        "header": "Layout"
+      },
+      "header": {
+        "content": "Section header"
+      },
+      "padding": {
+        "header": "Section padding"
+      }
     },
+    "top_header": {
+      "name": "Top header",
+      "settings": {
+        "utility_menu": {
+          "label": "Utility menu"
+        },
+        "show_localization": {
+          "label": "Show country/region selector"
+        },
+        "autoplay_speed": {
+          "label": "Announcement change speed"
+        }
+      },
+      "blocks": {
+        "announcement": {
+          "name": "Announcement"
+        },
+        "utility_link": {
+          "name": "Utility link",
+          "settings": {
+            "url": {
+              "label": "Link"
+            }
+          }
+        }
+      }
+    },
+    "header": {
+      "settings": {
+        "enable_sticky": {
+          "label": "Enable sticky header"
+        },
+        "logo": {
+          "label": "Logo image"
+        },
+        "logo_text": {
+          "label": "Logo text",
+          "info": "Used when no logo image is uploaded"
+        },
+        "search_header": "Search",
+        "enable_search": {
+          "label": "Enable search"
+        },
+        "search_placeholder": {
+          "label": "Search placeholder"
+        },
+        "icons_header": "Icons",
+        "wishlist_link": {
+          "label": "Wishlist page link"
+        },
+        "wishlist_count": {
+          "label": "Wishlist count"
+        }
+      },
+      "blocks": {
+        "menu_badge": {
+          "name": "Menu badge",
+          "settings": {
+            "menu_item": {
+              "label": "Menu item title",
+              "info": "Must match the menu link title exactly"
+            },
+            "badge_label": {
+              "label": "Badge text"
+            },
+            "badge_color": {
+              "label": "Badge color"
+            }
+          }
+        }
+      }
+    },
+    "breadcrumb": {
+      "name": "Breadcrumb"
+    },
+    "footer": {
+      "settings": {
+        "help_header": "Help column",
+        "show_help_column": {
+          "label": "Show help column"
+        },
+        "phone": {
+          "label": "Phone number"
+        },
+        "email": {
+          "label": "Email address"
+        },
+        "show_social": {
+          "label": "Show social links"
+        },
+        "bottom_header": "Bottom bar",
+        "show_localization": {
+          "label": "Show country/region selector"
+        }
+      },
+      "blocks": {
+        "link_list": {
+          "name": "Menu"
+        },
+        "newsletter": {
+          "name": "Newsletter",
+          "settings": {
+            "placeholder": {
+              "label": "Input placeholder"
+            },
+            "button_label": {
+              "label": "Button label"
+            },
+            "disclaimer": {
+              "label": "Disclaimer"
+            }
+          }
+        }
+      }
+    },
+    "faq": {
+      "name": "FAQ",
+      "settings": {
+        "show_breadcrumb": {
+          "label": "Show breadcrumb"
+        }
+      },
+      "blocks": {
+        "contact": {
+          "name": "Contact",
+          "settings": {
+            "button_label": {
+              "label": "Primary button label"
+            },
+            "button_link": {
+              "label": "Primary button link"
+            },
+            "button_secondary_label": {
+              "label": "Secondary button label"
+            },
+            "button_secondary_link": {
+              "label": "Secondary button link"
+            }
+          }
+        },
+        "category": {
+          "name": "Category"
+        },
+        "question": {
+          "name": "Question",
+          "settings": {
+            "question": {
+              "label": "Question"
+            },
+            "answer": {
+              "label": "Answer"
+            }
+          }
+        }
+      }
+    }
   }
 }

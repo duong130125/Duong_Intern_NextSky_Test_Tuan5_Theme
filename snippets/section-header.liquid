@@ -1,0 +1,31 @@
+{% doc %}
+  Renders a section header with heading, description, size, and alignment.
+
+  @param {object} section - The section object
+{% enddoc %}
+
+{% liquid
+  assign heading = section.settings.heading
+  assign description = section.settings.description
+  assign header_size = section.settings.header_size | default: 'medium'
+  assign alignment = section.settings.alignment | default: 'center'
+%}
+
+{% if heading != blank or description != blank %}
+  <div
+    class="section-header section-header--{{ header_size }} section-header--{{ alignment }}"
+    {% if section.settings.heading != blank %}
+      id="section-header-{{ section.id }}"
+    {% endif %}
+  >
+    {% if heading != blank %}
+      <h1 class="section-header__heading">{{ heading | escape }}</h1>
+    {% endif %}
+
+    {% if description != blank %}
+      <div class="section-header__description rte">
+        {{ description }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

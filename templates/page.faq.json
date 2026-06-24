@@ -1,0 +1,134 @@
+{
+  "sections": {
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "section_width": "default",
+        "show_breadcrumb": true,
+        "heading": "Help Center",
+        "description": "<p>Please use the below form. You can also call customer service on +1(973) 435-3638.</p>",
+        "header_size": "large",
+        "alignment": "center",
+        "padding_top": 40,
+        "padding_bottom": 100
+      },
+      "blocks": {
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "heading": "Contact Us",
+            "description": "<p>If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative.</p><p>Please allow 3 - 5 business days from the time your package arrives back to us for a refund to be issued.</p>",
+            "button_label": "Contact Us",
+            "button_secondary_label": "About us"
+          }
+        },
+        "category_shopping": {
+          "type": "category",
+          "settings": {
+            "heading": "Shopping Information"
+          }
+        },
+        "question_1": {
+          "type": "question",
+          "settings": {
+            "question": "Pellentesque habitant morbi tristique senectus et netus?",
+            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+          }
+        },
+        "question_2": {
+          "type": "question",
+          "settings": {
+            "question": "How much is shipping and how long will it take?",
+            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+          }
+        },
+        "question_3": {
+          "type": "question",
+          "settings": {
+            "question": "How long will it take to get my package?",
+            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+          }
+        },
+        "question_4": {
+          "type": "question",
+          "settings": {
+            "question": "Branding is simply a more efficient way to sell things?",
+            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+          }
+        },
+        "category_payment": {
+          "type": "category",
+          "settings": {
+            "heading": "Payment Information"
+          }
+        },
+        "question_5": {
+          "type": "question",
+          "settings": {
+            "question": "Pellentesque habitant morbi tristique senectus et netus?",
+            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+          }
+        },
+        "question_6": {
+          "type": "question",
+          "settings": {
+            "question": "How much is shipping and how long will it take?",
+            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+          }
+        },
+        "category_returns": {
+          "type": "category",
+          "settings": {
+            "heading": "Order & Returns"
+          }
+        },
+        "question_7": {
+          "type": "question",
+          "settings": {
+            "question": "How long will it take to get my package?",
+            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+          }
+        },
+        "category_ordering": {
+          "type": "category",
+          "settings": {
+            "heading": "Ordering from Glozin"
+          }
+        },
+        "question_8": {
+          "type": "question",
+          "settings": {
+            "question": "Branding is simply a more efficient way to sell things?",
+            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "contact",
+        "category_shopping",
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "category_payment",
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "category_returns",
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "category_ordering",
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+      ]
+    }
+  },
+  "order": [
+    "faq"
+  ]
+}

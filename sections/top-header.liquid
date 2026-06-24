@@ -1,0 +1,318 @@
+<div
+  class="top-header full-width color-{{ section.settings.color_scheme }} gradient"
+  data-top-header
+  style="--announcement-speed: {{ section.settings.autoplay_speed }}s;"
+>
+  <div class="top-header__inner section-inner section-inner--{{ section.settings.section_width }}">
+    <div class="top-header__announcements">
+      {% liquid
+        assign announcement_count = 0
+        for block in section.blocks
+          if block.type == 'announcement'
+            assign announcement_count = announcement_count | plus: 1
+          endif
+        endfor
+      %}
+
+      {% if announcement_count > 1 %}
+        <button
+          type="button"
+          class="top-header__nav top-header__nav--prev"
+          aria-label="{{ 'sections.top_header.previous_announcement' | t }}"
+          data-announcement-prev
+        >
+          {{ 'icon-chevron-left.svg' | inline_asset_content }}
+        </button>
+      {% endif %}
+
+      <div class="top-header__slider" data-announcement-slider>
+        {% for block in section.blocks %}
+          {% if block.type == 'announcement' %}
+            <div
+              class="top-header__slide{% if forloop.first %} is-active{% endif %}"
+              data-announcement-slide
+              {{ block.shopify_attributes }}
+            >
+              <div class="top-header__slide-text rte">
+                {{ block.settings.text }}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% if announcement_count > 1 %}
+        <button
+          type="button"
+          class="top-header__nav top-header__nav--next"
+          aria-label="{{ 'sections.top_header.next_announcement' | t }}"
+          data-announcement-next
+        >
+          {{ 'icon-chevron-right.svg' | inline_asset_content }}
+        </button>
+      {% endif %}
+    </div>
+
+    <button
+      type="button"
+      class="top-header__close"
+      aria-label="{{ 'sections.top_header.close' | t | default: 'Close' }}"
+      data-top-header-close
+    >
+      {{ 'icon-close.svg' | inline_asset_content }}
+    </button>
+  </div>
+</div>
+
+{% stylesheet %}
+  .top-header {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  .top-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 4.2rem;
+    padding-block: 1rem;
+    background-color: #4c5749;
+    color: #ffffff;
+  }
+
+  .top-header__announcements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12rem;
+    min-width: 0;
+  }
+
+  .top-header__slider {
+    position: relative;
+    min-width: 0;
+    min-height: 2rem;
+    text-align: center;
+  }
+
+  .top-header__slide {
+    display: none;
+  }
+
+  .top-header__slide.is-active {
+    display: block;
+  }
+
+  .top-header__slide-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .top-header__slide-text p {
+    margin: 0;
+    display: inline;
+  }
+
+  .top-header__slide-text a {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .top-header__slide-text a:hover {
+    text-decoration: underline;
+  }
+
+  .top-header__slide-text strong {
+    font-weight: 700;
+  }
+
+  .top-header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    flex-shrink: 0;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+  }
+
+  .top-header__nav:hover {
+    opacity: 1;
+  }
+
+  .top-header__nav svg {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .top-header__close {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+  }
+
+  .top-header__close:hover {
+    opacity: 1;
+  }
+
+  .top-header__close svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .top-header.is-hidden {
+    display: none;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  (function () {
+    const root = document.querySelector('[data-top-header]');
+    if (!root) return;
+
+    /* Close button */
+    const closeBtn = root.querySelector('[data-top-header-close]');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        root.classList.add('is-hidden');
+      });
+    }
+
+    /* Announcement slider */
+    const slides = Array.from(root.querySelectorAll('[data-announcement-slide]'));
+    if (slides.length > 1) {
+      let current = 0;
+      let timer;
+      const speed = parseFloat(getComputedStyle(root).getPropertyValue('--announcement-speed')) || 5;
+
+      function show(index) {
+        slides[current]?.classList.remove('is-active');
+        current = (index + slides.length) % slides.length;
+        slides[current]?.classList.add('is-active');
+      }
+
+      function next() {
+        show(current + 1);
+      }
+
+      function prev() {
+        show(current - 1);
+      }
+
+      function startAutoplay() {
+        clearInterval(timer);
+        timer = setInterval(next, speed * 1000);
+      }
+
+      root.querySelector('[data-announcement-next]')?.addEventListener('click', () => {
+        next();
+        startAutoplay();
+      });
+
+      root.querySelector('[data-announcement-prev]')?.addEventListener('click', () => {
+        prev();
+        startAutoplay();
+      });
+
+      startAutoplay();
+    }
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:sections.top_header.name",
+  "class": "top-header-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:labels.section_width",
+      "options": [
+        { "value": "default", "label": "t:options.section_width.default" },
+        { "value": "fluid", "label": "t:options.section_width.fluid" },
+        { "value": "stretch", "label": "t:options.section_width.stretch" },
+        { "value": "full", "label": "t:options.section_width.full" }
+      ],
+      "default": "stretch"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme-3"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "t:sections.top_header.settings.autoplay_speed.label",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.top_header.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:labels.text",
+          "default": "<p>Sign up for 10% off your first order. <strong>Sign Up</strong></p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.top_header.name",
+      "blocks": [
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Sign up for 10% off your first order. <strong>Sign Up</strong></p>"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Summer sale discount off 50%. <strong>Shop Sale</strong></p>"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Coats—every friday 75% Off. <strong>Shop Sale</strong></p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

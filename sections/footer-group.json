@@ -1,21 +1,49 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "type": "footer",
   "name": "t:general.footer",
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "company_links": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Our Company"
+          }
+        },
+        "shop_links": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop Categories"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Sign Up to Newsletter",
+            "description": "<p>Sign up for 10% off your first purchase and free shipping. Updates information on Sales and Offers.</p>",
+            "placeholder": "Enter your email...",
+            "button_label": "Sign Up",
+            "disclaimer": "<p>***By entering the e-mail you accept the <a href=\"#\">terms and conditions</a> and the <a href=\"#\">privacy policy.</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "company_links",
+        "shop_links",
+        "newsletter"
+      ],
       "settings": {
-        "menu": "",
-        "show_payment_icons": true
+        "section_width": "stretch",
+        "color_scheme": "scheme-1",
+        "show_help_column": true,
+        "help_heading": "Help Customers",
+        "help_description": "<p>Find a location nearest you to reduce shipping costs and make shopping easier. <a href=\"#\">Show on google maps.</a></p>",
+        "phone": "+1 (973) 435-3638",
+        "email": "info@fashionwomen.com",
+        "show_social": true,
+        "show_payment_icons": true,
+        "show_localization": true
       }
     }
   },

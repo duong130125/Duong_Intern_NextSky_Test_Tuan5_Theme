@@ -1,12 +1,33 @@
-<div class="custom-section full-width">
-  {% if section.settings.background_image %}
-    <div class="custom-section__background">
-      {{ section.settings.background_image | image_url: width: 2000 | image_tag }}
-    </div>
-  {% endif %}
+{% render 'section-styles', section: section %}
 
-  <div class="custom-section__content">
-    {% content_for 'blocks' %}
+<div
+  class="
+    custom-section
+    section-{{ section.id }}-padding
+    {% if section.settings.section_width == 'full' or section.settings.section_width == 'stretch' %}full-width{% endif %}
+  "
+>
+  <div
+    class="
+      custom-section__inner
+      section-inner
+      section-inner--{{ section.settings.section_width }}
+      color-{{ section.settings.color_scheme }}
+      gradient
+      {% if section.settings.remove_section_spacing %}section-inner--no-spacing{% endif %}
+    "
+  >
+    {% render 'section-header', section: section %}
+
+    {% if section.settings.background_image %}
+      <div class="custom-section__background">
+        {{ section.settings.background_image | image_url: width: 2000 | image_tag }}
+      </div>
+    {% endif %}
+
+    <div class="custom-section__content">
+      {% content_for 'blocks' %}
+    </div>
   </div>
 </div>
 
@@ -16,6 +37,12 @@
     overflow: hidden;
     width: 100%;
   }
+
+  .custom-section__inner {
+    position: relative;
+    width: 100%;
+  }
+
   .custom-section__background {
     position: absolute;
     width: 100%;
@@ -45,6 +72,93 @@
   "name": "t:general.custom_section",
   "blocks": [{ "type": "@theme" }],
   "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.layout.header"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:labels.section_width",
+      "options": [
+        { "value": "default", "label": "t:options.section_width.default" },
+        { "value": "fluid", "label": "t:options.section_width.fluid" },
+        { "value": "stretch", "label": "t:options.section_width.stretch" },
+        { "value": "full", "label": "t:options.section_width.full" }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.header.content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:labels.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:labels.description"
+    },
+    {
+      "type": "select",
+      "id": "header_size",
+      "label": "t:labels.header_size",
+      "options": [
+        { "value": "small", "label": "t:options.size.small" },
+        { "value": "medium", "label": "t:options.size.medium" },
+        { "value": "large", "label": "t:options.size.large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "t:labels.alignment",
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:labels.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:labels.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_section_spacing",
+      "label": "t:labels.remove_section_spacing",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:general.content"
+    },
     {
       "type": "image_picker",
       "id": "background_image",

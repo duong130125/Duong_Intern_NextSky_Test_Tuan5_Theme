@@ -44,9 +44,140 @@
   },
   "search": {
     "title": "Search",
-    "placeholder": "Search articles, pages, or products",
+    "placeholder": "I'm looking for…",
     "submit": "Search",
     "no_results_html": "No results found for {{ terms }}",
     "results_for_html": "{{ count }} results found for {{ terms }}"
+  },
+  "sections": {
+    "all": {
+      "layout": {
+        "header": "Layout"
+      },
+      "header": {
+        "content": "Section header"
+      },
+      "padding": {
+        "header": "Section padding"
+      }
+    },
+    "header": {
+      "open_menu": "Open menu",
+      "main_menu": "Main menu",
+      "account": "Account",
+      "wishlist": "Wishlist",
+      "settings": {
+        "enable_sticky": {
+          "label": "Enable sticky header"
+        },
+        "logo": {
+          "label": "Logo image"
+        },
+        "logo_text": {
+          "label": "Logo text",
+          "info": "Used when no logo image is uploaded"
+        },
+        "search_header": "Search",
+        "enable_search": {
+          "label": "Enable search"
+        },
+        "search_placeholder": {
+          "label": "Search placeholder"
+        },
+        "icons_header": "Icons",
+        "wishlist_link": {
+          "label": "Wishlist page link"
+        },
+        "wishlist_count": {
+          "label": "Wishlist count"
+        }
+      },
+      "blocks": {
+        "menu_badge": {
+          "name": "Menu badge",
+          "settings": {
+            "menu_item": {
+              "label": "Menu item title",
+              "info": "Must match the menu link title exactly"
+            },
+            "badge_label": {
+              "label": "Badge text"
+            },
+            "badge_color": {
+              "label": "Badge color"
+            }
+          }
+        }
+      }
+    },
+    "top_header": {
+      "name": "Top header",
+      "previous_announcement": "Previous announcement",
+      "next_announcement": "Next announcement",
+      "utility_menu": "Utility menu",
+      "settings": {
+        "utility_menu": {
+          "label": "Utility menu"
+        },
+        "show_localization": {
+          "label": "Show country/region selector"
+        },
+        "autoplay_speed": {
+          "label": "Announcement change speed"
+        }
+      },
+      "blocks": {
+        "announcement": {
+          "name": "Announcement"
+        },
+        "utility_link": {
+          "name": "Utility link",
+          "settings": {
+            "url": {
+              "label": "Link"
+            }
+          }
+        }
+      }
+    },
+    "breadcrumb": {
+      "name": "Breadcrumb",
+      "label": "Breadcrumb",
+      "home": "Home"
+    },
+    "footer": {
+      "copyright": "All rights reserved.",
+      "newsletter": {
+        "placeholder": "Enter your email...",
+        "submit": "Sign Up"
+      }
+    },
+    "faq": {
+      "name": "FAQ",
+      "settings": {
+        "show_breadcrumb": {
+          "label": "Show breadcrumb"
+        }
+      },
+      "blocks": {
+        "contact": {
+          "name": "Contact"
+        },
+        "category": {
+          "name": "Category"
+        },
+        "question": {
+          "name": "Question",
+          "settings": {
+            "question": {
+              "label": "Question"
+            },
+            "answer": {
+              "label": "Answer"
+            }
+          }
+        }
+      }
+    }
   }
 }

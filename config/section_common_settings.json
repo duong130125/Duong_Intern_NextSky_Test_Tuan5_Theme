@@ -1,0 +1,86 @@
+[
+  {
+    "type": "header",
+    "content": "t:sections.all.layout.header"
+  },
+  {
+    "type": "select",
+    "id": "section_width",
+    "label": "t:labels.section_width",
+    "options": [
+      { "value": "default", "label": "t:options.section_width.default" },
+      { "value": "fluid", "label": "t:options.section_width.fluid" },
+      { "value": "stretch", "label": "t:options.section_width.stretch" },
+      { "value": "full", "label": "t:options.section_width.full" }
+    ],
+    "default": "default"
+  },
+  {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "t:labels.color_scheme",
+    "default": "scheme-1"
+  },
+  {
+    "type": "header",
+    "content": "t:sections.all.header.content"
+  },
+  {
+    "type": "text",
+    "id": "heading",
+    "label": "t:labels.heading",
+    "default": ""
+  },
+  {
+    "type": "richtext",
+    "id": "description",
+    "label": "t:labels.description"
+  },
+  {
+    "type": "select",
+    "id": "header_size",
+    "label": "t:labels.header_size",
+    "options": [
+      { "value": "small", "label": "t:options.size.small" },
+      { "value": "medium", "label": "t:options.size.medium" },
+      { "value": "large", "label": "t:options.size.large" }
+    ],
+    "default": "medium"
+  },
+  {
+    "type": "text_alignment",
+    "id": "alignment",
+    "label": "t:labels.alignment",
+    "default": "center"
+  },
+  {
+    "type": "header",
+    "content": "t:sections.all.padding.header"
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "min": 0,
+    "max": 120,
+    "step": 4,
+    "unit": "px",
+    "label": "t:labels.padding_top",
+    "default": 48
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "min": 0,
+    "max": 120,
+    "step": 4,
+    "unit": "px",
+    "label": "t:labels.padding_bottom",
+    "default": 48
+  },
+  {
+    "type": "checkbox",
+    "id": "remove_section_spacing",
+    "label": "t:labels.remove_section_spacing",
+    "default": false
+  }
+]

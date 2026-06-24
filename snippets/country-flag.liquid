@@ -1,0 +1,18 @@
+{% doc %}
+  Renders a small circular country flag image.
+
+  @param {country} country - The localization country object
+{% enddoc %}
+
+{% liquid
+  assign country_code = country.iso_code | downcase
+%}
+
+<img
+  class="country-flag"
+  src="https://cdn.shopify.com/static/images/flags/{{ country_code }}.svg"
+  width="20"
+  height="20"
+  alt="{{ country.name | escape }}"
+  loading="lazy"
+>
