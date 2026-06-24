@@ -46,7 +46,7 @@
       ],
       "name": "t:general.footer",
       "settings": {
-        "section_width": "stretch",
+        "section_width": "fluid",
         "color_scheme": "",
         "show_help_column": true,
         "help_heading": "Help Customers",
