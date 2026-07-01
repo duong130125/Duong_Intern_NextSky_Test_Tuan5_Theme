@@ -254,8 +254,8 @@
         "autoplay_speed": 4,
         "reveal_next": false,
         "items_mobile": "1",
-        "padding_top": 40,
-        "padding_bottom": 64,
+        "padding_top": 0,
+        "padding_bottom": 100,
         "remove_spacing": false
       }
     }
