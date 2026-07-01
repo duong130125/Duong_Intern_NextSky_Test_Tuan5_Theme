@@ -88,10 +88,6 @@
       {% endif %}
 
       <div class="faq__main">
-        {% liquid
-          assign in_category = false
-        %}
-
         {% for block in section.blocks %}
           {% if block.type == 'contact' %}
             {% continue %}
@@ -99,30 +95,20 @@
 
           {% case block.type %}
             {% when 'category' %}
-              {% if in_category %}
-                </div>
-                </div>
+              {% if block.settings.heading != blank %}
+                <h2 class="faq__category-title" {{ block.shopify_attributes }}>
+                  {{ block.settings.heading | escape }}
+                </h2>
               {% endif %}
-              <div class="faq__category" {{ block.shopify_attributes }}>
-                {% if block.settings.heading != blank %}
-                  <h2 class="faq__category-title">{{ block.settings.heading | escape }}</h2>
-                {% endif %}
-                <div class="faq__items">
-                  {% assign in_category = true %}
-            {% when 'question' %}
-              {% unless in_category %}
-                <div class="faq__category">
-                  <div class="faq__items">
-                    {% assign in_category = true %}
-              {% endunless %}
 
+            {% when 'question' %}
               <details class="faq__item" {{ block.shopify_attributes }}>
                 <summary class="faq__question">
                   <span class="faq__question-text">{{ block.settings.question | escape }}</span>
                   <span class="faq__icon" aria-hidden="true">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path class="faq__icon-vertical" d="M7 1V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                      <path d="M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                      <path class="faq__icon-horizontal" d="M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                   </span>
                 </summary>
@@ -134,11 +120,6 @@
               </details>
           {% endcase %}
         {% endfor %}
-
-        {% if in_category %}
-          </div>
-          </div>
-        {% endif %}
       </div>
     </div>
   </div>
@@ -270,17 +251,19 @@
     min-width: 0;
   }
 
-  .faq__category + .faq__category {
-    margin-top: 3.6rem;
-  }
-
   .faq__category-title {
     font-size: 2rem;
     font-weight: 600;
+    color: #111111 !important;
     line-height: 1.21;
+    margin-top: 3.6rem;
     margin-bottom: 1.6rem;
     letter-spacing: -0.02em;
     text-align: left;
+  }
+
+  .faq__main > :first-child.faq__category-title {
+    margin-top: 0;
   }
 
   .faq__items {
@@ -322,6 +305,7 @@
   .faq__question-text {
     flex: 1;
     padding-right: 1rem;
+    color: #111111 !important;
   }
 
   .faq__icon {
@@ -334,13 +318,32 @@
     transition: transform 0.25s ease;
   }
 
-  .faq__item[open] .faq__icon {
-    transform: rotate(45deg);
+  .faq__icon svg {
+    overflow: visible;
+  }
+
+  .faq__icon-vertical {
+    transition: transform 0.25s ease;
+    transform-origin: 7px 7px;
+  }
+
+  .faq__icon-horizontal {
+    transition: transform 0.25s ease;
+    transform-origin: 7px 7px;
+  }
+
+  .faq__item[open] .faq__icon-vertical {
+    transform: rotate(90deg);
+  }
+
+  .faq__item[open] .faq__icon-horizontal {
+    transform: rotate(180deg);
   }
 
   .faq__answer {
     padding: 0 0 2rem;
     font-size: 1.4rem;
+    font-weight: 400;
     line-height: 1.7;
     color: rgb(68, 68, 68);
     background: transparent;
@@ -382,17 +385,18 @@
       min-height: 124.855rem;
     }
 
-    .faq__category + .faq__category {
-      margin-top: 5rem;
-    }
-
     .faq__contact-title {
       font-size: 2.4rem;
     }
 
     .faq__category-title {
       font-size: 2.4rem;
+      margin-top: 5rem;
       margin-bottom: 1rem;
+    }
+
+    .faq__main > :first-child.faq__category-title {
+      margin-top: 0;
     }
 
     .faq__question {

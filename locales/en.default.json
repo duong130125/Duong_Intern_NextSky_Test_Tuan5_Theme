@@ -114,6 +114,7 @@
       "name": "Top header",
       "previous_announcement": "Previous announcement",
       "next_announcement": "Next announcement",
+      "close": "Close",
       "utility_menu": "Utility menu",
       "settings": {
         "utility_menu": {
@@ -178,6 +179,12 @@
           }
         }
       }
+    },
+    "product_testimonials": {
+      "verified_buyer": "Verified Buyer",
+      "rating_aria": "{{ rating }} stars out of 5",
+      "previous_slide": "Previous slide",
+      "next_slide": "Next slide"
     }
   }
 }

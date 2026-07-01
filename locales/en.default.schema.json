@@ -260,6 +260,94 @@
           }
         }
       }
+    },
+    "product_testimonials": {
+      "name": "Product testimonials",
+      "settings": {
+        "testimonial_header": "Testimonial settings",
+        "show_verified": {
+          "label": "Show verified buyer"
+        },
+        "show_image": {
+          "label": "Show image"
+        },
+        "image_position": {
+          "label": "Image position",
+          "options": {
+            "top": "Top",
+            "right": "Right",
+            "bottom": "Bottom",
+            "left": "Left"
+          }
+        },
+        "image_width": {
+          "label": "Image width (left/right position)"
+        },
+        "framed": {
+          "label": "Framed layout"
+        },
+        "rate_color": {
+          "label": "Rating stars color"
+        },
+        "layout_header": "Layout configuration",
+        "items_desktop": {
+          "label": "Items per row (desktop)"
+        },
+        "column_gap": {
+          "label": "Column gap"
+        },
+        "carousel_header": "Carousel settings",
+        "show_nav": {
+          "label": "Show next/back arrows"
+        },
+        "pagination": {
+          "label": "Pagination",
+          "options": {
+            "disable": "Disable",
+            "dots": "Show dots",
+            "dots_mobile": "Show dots on mobile only",
+            "progress": "Show progress bar"
+          }
+        },
+        "infinite": {
+          "label": "Infinite slider loop"
+        },
+        "autoplay": {
+          "label": "Auto change slides"
+        },
+        "autoplay_speed": {
+          "label": "Change slides every"
+        },
+        "reveal_next": {
+          "label": "Reveal next slide"
+        },
+        "mobile_header": "Mobile options",
+        "items_mobile": {
+          "label": "Items per row (mobile)"
+        }
+      },
+      "blocks": {
+        "testimonial": {
+          "name": "Testimonial",
+          "settings": {
+            "image": {
+              "label": "Author image"
+            },
+            "rating": {
+              "label": "Star rating"
+            },
+            "name": {
+              "label": "Author name"
+            },
+            "quote": {
+              "label": "Quote text"
+            },
+            "product": {
+              "label": "Select product"
+            }
+          }
+        }
+      }
     }
   }
 }
