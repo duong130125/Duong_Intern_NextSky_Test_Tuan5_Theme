@@ -1,17 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "faq",
-      "settings": {
-        "section_width": "default",
-        "show_breadcrumb": true,
-        "heading": "Help Center",
-        "description": "<p>Please use the below form. You can also call customer service on +1(973) 435-3638.</p>",
-        "header_size": "large",
-        "alignment": "center",
-        "padding_top": 40,
-        "padding_bottom": 100
-      },
       "blocks": {
         "contact": {
           "type": "contact",
@@ -19,7 +18,9 @@
             "heading": "Contact Us",
             "description": "<p>If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative.</p><p>Please allow 3 - 5 business days from the time your package arrives back to us for a refund to be issued.</p>",
             "button_label": "Contact Us",
-            "button_secondary_label": "About us"
+            "button_link": "",
+            "button_secondary_label": "About us",
+            "button_secondary_link": ""
           }
         },
         "category_shopping": {
@@ -181,11 +182,59 @@
         "question_14",
         "question_15",
         "question_16"
-      ]
+      ],
+      "settings": {
+        "section_width": "default",
+        "color_scheme": "",
+        "show_breadcrumb": true,
+        "heading": "Help Center",
+        "description": "<p>Please use the below form. You can also call customer service on +1(973) 435-3638.</p>",
+        "header_size": "large",
+        "alignment": "center",
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "remove_section_spacing": false
+      }
     },
     "testimonials": {
       "type": "product-testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "name": "Carie-Gosée H.",
+            "quote": "<p>These are sooo pretty and very comfy. Perfect color as well. I love wearing these with a neutral top and Chelsea boots. Wicked cute... 😍</p>",
+            "product": ""
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "name": "Cameron Smith.",
+            "quote": "<p>A perfect product, it keeps you very warm without over heating. True to size, I couldn't be happier with the purchase... Thank you! 🤗</p>",
+            "product": ""
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "name": "Algistino Lionel.",
+            "quote": "<p>A fantastic purchase. The product provides just the right amount of warmth without causing overheating. Highly recommend! 🥰</p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
       "settings": {
+        "section_width": "default",
+        "color_scheme": "",
         "heading": "Customer Say!",
         "description": "<p>Customers love our products and we always strive to please them all.</p>",
         "header_size": "large",
@@ -195,51 +244,24 @@
         "image_position": "left",
         "image_width": 35,
         "framed": true,
+        "rate_color": "#ffb800",
         "items_desktop": 2,
         "column_gap": 30,
         "show_nav": true,
         "pagination": "disable",
         "infinite": true,
         "autoplay": false,
+        "autoplay_speed": 4,
+        "reveal_next": false,
         "items_mobile": "1",
         "padding_top": 40,
-        "padding_bottom": 64
-      },
-      "blocks": {
-        "testimonial_1": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Carie-Gosée H.",
-            "rating": 5,
-            "quote": "<p>These are sooo pretty and very comfy. Perfect color as well. I love wearing these with a neutral top and Chelsea boots. Wicked cute... 😍</p>"
-          }
-        },
-        "testimonial_2": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Cameron Smith.",
-            "rating": 5,
-            "quote": "<p>A perfect product, it keeps you very warm without over heating. True to size, I couldn't be happier with the purchase... Thank you! 🤗</p>"
-          }
-        },
-        "testimonial_3": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Algistino Lionel.",
-            "rating": 5,
-            "quote": "<p>A fantastic purchase. The product provides just the right amount of warmth without causing overheating. Highly recommend! 🥰</p>"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_1",
-        "testimonial_2",
-        "testimonial_3"
-      ]
+        "padding_bottom": 64,
+        "remove_spacing": false
+      }
     }
   },
   "order": [
-    "testimonials",
-    "main"
+    "main",
+    "testimonials"
   ]
 }
