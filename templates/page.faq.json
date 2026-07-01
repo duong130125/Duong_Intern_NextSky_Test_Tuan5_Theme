@@ -1,17 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "faq": {
       "type": "faq",
-      "settings": {
-        "section_width": "default",
-        "show_breadcrumb": true,
-        "heading": "Help Center",
-        "description": "<p>Please use the below form. You can also call customer service on +1(973) 435-3638.</p>",
-        "header_size": "large",
-        "alignment": "center",
-        "padding_top": 40,
-        "padding_bottom": 100
-      },
       "blocks": {
         "contact": {
           "type": "contact",
@@ -111,21 +110,19 @@
         "question_3",
         "question_4",
         "category_payment",
-        "question_1",
-        "question_2",
-        "question_3",
-        "question_4",
         "category_returns",
-        "question_1",
-        "question_2",
-        "question_3",
-        "question_4",
-        "category_ordering",
-        "question_1",
-        "question_2",
-        "question_3",
-        "question_4",
-      ]
+        "category_ordering"
+      ],
+      "settings": {
+        "section_width": "default",
+        "show_breadcrumb": true,
+        "heading": "Help Center",
+        "description": "<p>Please use the below form. You can also call customer service on +1(973) 435-3638.</p>",
+        "header_size": "large",
+        "alignment": "center",
+        "padding_top": 40,
+        "padding_bottom": 100
+      }
     }
   },
   "order": [

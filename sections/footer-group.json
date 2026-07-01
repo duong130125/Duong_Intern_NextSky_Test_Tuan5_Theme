@@ -1,23 +1,34 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "t:general.footer",
   "sections": {
-    "footer": {
+    "footer_t9yWAG": {
       "type": "footer",
       "blocks": {
-        "company_links": {
+        "link_list_RAp7rm": {
           "type": "link_list",
           "settings": {
-            "heading": "Our Company"
+            "heading": "Our Company",
+            "menu": "our-company"
           }
         },
-        "shop_links": {
+        "link_list_GBpNka": {
           "type": "link_list",
           "settings": {
-            "heading": "Shop Categories"
+            "heading": "Shop Categories",
+            "menu": "shop-categories"
           }
         },
-        "newsletter": {
+        "newsletter_yUytdX": {
           "type": "newsletter",
           "settings": {
             "heading": "Sign Up to Newsletter",
@@ -29,25 +40,31 @@
         }
       },
       "block_order": [
-        "company_links",
-        "shop_links",
-        "newsletter"
+        "link_list_RAp7rm",
+        "link_list_GBpNka",
+        "newsletter_yUytdX"
       ],
+      "name": "t:general.footer",
       "settings": {
-        "section_width": "stretch",
-        "color_scheme": "scheme-1",
+        "section_width": "fluid",
+        "color_scheme": "",
         "show_help_column": true,
         "help_heading": "Help Customers",
         "help_description": "<p>Find a location nearest you to reduce shipping costs and make shopping easier. <a href=\"#\">Show on google maps.</a></p>",
         "phone": "+1 (973) 435-3638",
         "email": "info@fashionwomen.com",
         "show_social": true,
+        "social_facebook": "",
+        "social_instagram": "",
+        "social_tiktok": "",
+        "social_youtube": "",
+        "social_pinterest": "",
         "show_payment_icons": true,
         "show_localization": true
       }
     }
   },
   "order": [
-    "footer"
+    "footer_t9yWAG"
   ]
 }
