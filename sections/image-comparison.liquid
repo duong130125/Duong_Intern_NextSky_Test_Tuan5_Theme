@@ -88,6 +88,11 @@
           {% else %}
             {{ 'image' | placeholder_svg_tag: 'image-comparison__placeholder' }}
           {% endif %}
+          {% if show_before_after_text %}
+            <span class="image-comparison__label image-comparison__label--after">
+              {{ 'sections.image_comparison.after_text' | t }}
+            </span>
+          {% endif %}
         </div>
 
         {%- comment -%} Before image (clipped) {%- endcomment -%}
@@ -100,6 +105,11 @@
             }}
           {% else %}
             {{ 'collection-1' | placeholder_svg_tag: 'image-comparison__placeholder' }}
+          {% endif %}
+          {% if show_before_after_text %}
+            <span class="image-comparison__label image-comparison__label--before">
+              {{ 'sections.image_comparison.before_text' | t }}
+            </span>
           {% endif %}
         </div>
 
@@ -119,16 +129,7 @@
         </div>
 
         {%- comment -%} Before/After labels {%- endcomment -%}
-        {% if show_before_after_text %}
-          <div class="image-comparison__labels">
-            <span class="image-comparison__label image-comparison__label--before">
-              {{ 'sections.image_comparison.before_text' | t }}
-            </span>
-            <span class="image-comparison__label image-comparison__label--after">
-              {{ 'sections.image_comparison.after_text' | t }}
-            </span>
-          </div>
-        {% endif %}
+        {%- comment -%} labels moved inside image containers so they are clipped by the slider naturally {%- endcomment -%}
       </div>
     </div>
   </div>
@@ -251,13 +252,13 @@
     top: 0;
     bottom: 0;
     left: 50%;
-    z-index: 4;
+    z-index: 6;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transform: translateX(-50%);
-    pointer-events: none;
+    pointer-events: auto;
   }
 
   .image-comparison__handle-line {
@@ -277,41 +278,26 @@
     border: none;
     background: #ffffff;
     color: #000000;
-    cursor: col-resize;
+    cursor: grab;
     pointer-events: auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     flex-shrink: 0;
-    z-index: 5;
-  }
-
-  .image-comparison__handle-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    z-index: 7;
   }
 
   .image-comparison__handle-button:active {
-    transform: scale(0.95);
+    transform: none;
   }
 
   .image-comparison__handle-button svg {
     pointer-events: none;
   }
 
-  /* Labels */
-  .image-comparison__labels {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem;
-    pointer-events: none;
-  }
-
+  /* Labels placed inside each image so they get clipped/covered naturally */
   .image-comparison__label {
+    position: absolute;
+    bottom: 3rem;
     font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -319,14 +305,19 @@
     color: #000000;
     line-height: 1.25;
     max-width: 12rem;
+    pointer-events: none;
   }
 
-  .image-comparison__label--before {
-    text-align: left;
-  }
-
-  .image-comparison__label--after {
+  .image-comparison__after .image-comparison__label--after {
+    right: 5rem;
     text-align: right;
+    z-index: 1; /* underneath the before layer so it gets covered */
+  }
+
+  .image-comparison__before .image-comparison__label--before {
+    left: 5rem;
+    text-align: left;
+    z-index: 3;
   }
 
   /* Mobile */
@@ -379,7 +370,18 @@
       function updatePosition(x) {
         if (x === undefined) return;
         rect = container.getBoundingClientRect();
-        let pos = (x - rect.left) / rect.width;
+
+        const btn = handleEl.querySelector('button');
+        const btnHalf = btn ? btn.offsetWidth / 2 : 0;
+
+        // clamp the clientX so the center of the button never goes beyond
+        // rect.left + btnHalf .. rect.right - btnHalf
+        const minX = rect.left + btnHalf;
+        const maxX = rect.left + rect.width - btnHalf;
+
+        let clampedX = Math.max(minX, Math.min(maxX, x));
+
+        let pos = (clampedX - rect.left) / rect.width;
         pos = Math.max(0, Math.min(1, pos));
         const percent = pos * 100;
 
