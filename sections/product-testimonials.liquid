@@ -81,7 +81,10 @@
                           | image_tag: class: 'testimonial-card__image', loading: 'lazy'
                         }}
                       {% else %}
-                        {{ 'lifestyle-1' | placeholder_svg_tag: 'testimonial-card__image testimonial-card__placeholder' }}
+                        {{
+                          'lifestyle-1'
+                          | placeholder_svg_tag: 'testimonial-card__image testimonial-card__placeholder'
+                        }}
                       {% endif %}
                     </div>
                   {% endif %}
@@ -113,7 +116,13 @@
                       <span class="testimonial-card__name">{{ block.settings.name | escape }}</span>
                       {% if section.settings.show_verified %}
                         <span class="testimonial-card__verified">
-                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
                             <path
                               d="M10.5 3L4.5 9L1.5 6"
                               stroke="currentColor"
@@ -401,8 +410,8 @@
   }
 
   .testimonial-product__image-wrapper {
-    width: 5.6rem;
-    height: 5.6rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
@@ -729,10 +738,10 @@
 
       // Container width
       const containerWidth = this.clientWidth;
-      
+
       // Calculate active layout space
       let activeWidth = containerWidth;
-      
+
       // If reveal next slide is active, shrink the active content width to let the next peek in
       if (this.reveal && totalSlides > itemsToShow) {
         const peekAmount = isMobile ? 35 : 60; // peeking offset in px
@@ -742,7 +751,7 @@
       // Calculate slide width based on gap
       this.slideWidth = (activeWidth - (itemsToShow - 1) * this.gap) / itemsToShow;
 
-      this.slides.forEach(slide => {
+      this.slides.forEach((slide) => {
         slide.style.width = `${this.slideWidth}px`;
         slide.style.marginRight = `${this.gap}px`;
       });
@@ -800,9 +809,7 @@
     }
 
     setTrackTransition(enabled) {
-      this.track.style.transition = enabled
-        ? 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-        : 'none';
+      this.track.style.transition = enabled ? 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none';
     }
 
     getCurrentOffset() {
@@ -954,7 +961,7 @@
     renderDots() {
       if (!this.dotsContainer) return;
       this.dotsContainer.innerHTML = '';
-      
+
       const isMobile = window.innerWidth < 750;
       const itemsToShow = isMobile ? this.itemsMobile : this.itemsDesktop;
       const dotCount = this.infinite
