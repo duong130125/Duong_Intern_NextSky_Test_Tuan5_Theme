@@ -247,7 +247,7 @@
         "image_position": "left",
         "image_width": 35,
         "framed": true,
-        "rate_color": "#ffb800",
+        "rate_color": "#FF9C05",
         "items_desktop": 2,
         "column_gap": 30,
         "show_nav": true,
