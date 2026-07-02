@@ -9,6 +9,8 @@
  */
 {
   "current": {
+    "type_primary_font": "instrument_sans_n6",
+    "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
         "settings": {
