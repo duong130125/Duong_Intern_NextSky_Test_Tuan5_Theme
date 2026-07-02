@@ -261,10 +261,30 @@
         "padding_bottom": 100,
         "remove_spacing": false
       }
+    },
+    "image_comparison": {
+      "type": "image-comparison",
+      "settings": {
+        "section_width": "full",
+        "color_scheme": "",
+        "heading": "",
+        "description": "",
+        "header_size": "medium",
+        "alignment": "center",
+        "content_width": "100",
+        "content_position": "left",
+        "show_before_after_text": true,
+        "image_ratio": "custom",
+        "custom_ratio": "1860/800",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "remove_section_spacing": true
+      }
     }
   },
   "order": [
     "main",
-    "testimonials"
+    "testimonials",
+    "image_comparison"
   ]
 }

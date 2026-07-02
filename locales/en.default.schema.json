@@ -357,6 +357,42 @@
           }
         }
       }
+    },
+    "image_comparison": {
+      "name": "Image comparison",
+      "settings": {
+        "images_header": "Before / After images",
+        "before_image": {
+          "label": "Before image"
+        },
+        "after_image": {
+          "label": "After image"
+        },
+        "content_width": {
+          "label": "Width"
+        },
+        "content_position": {
+          "label": "Position"
+        },
+        "show_before_after_text": {
+          "label": "Show before / after text"
+        },
+        "image_ratio_header": "Image ratio",
+        "image_ratio": {
+          "label": "Image ratio",
+          "options": {
+            "adapt": "Adapt to image",
+            "square": "Square (1:1)",
+            "portrait": "Portrait (3:4)",
+            "landscape": "Landscape (4:3)",
+            "custom": "Custom"
+          }
+        },
+        "custom_ratio": {
+          "label": "Custom ratio",
+          "info": "Enter a ratio like 16/9 or 21/9"
+        }
+      }
     }
   }
 }

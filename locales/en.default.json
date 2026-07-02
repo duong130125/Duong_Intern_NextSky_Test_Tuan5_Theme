@@ -194,6 +194,11 @@
       "rating_aria": "{{ rating }} stars out of 5",
       "previous_slide": "Previous slide",
       "next_slide": "Next slide"
+    },
+    "image_comparison": {
+      "before_text": "Before using skincare",
+      "after_text": "After using skincare",
+      "slider_label": "Drag to compare before and after"
     }
   }
 }
