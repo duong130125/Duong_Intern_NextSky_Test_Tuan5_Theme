@@ -98,9 +98,9 @@
                       {% for i in (1..5) %}
                         <svg
                           class="testimonial-card__star {% if i <= rating_num %}testimonial-card__star--filled{% endif %}"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 18 18"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
@@ -176,11 +176,11 @@
             aria-label="{{ 'sections.product_testimonials.previous_slide' | t }}"
             data-slider-prev
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M12.5 15L7.5 10L12.5 5"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
@@ -192,11 +192,11 @@
             aria-label="{{ 'sections.product_testimonials.next_slide' | t }}"
             data-slider-next
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M7.5 15L12.5 10L7.5 5"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
@@ -242,6 +242,7 @@
 
   .product-testimonials .section-header__heading {
     font-weight: 600;
+    color: #111111;
   }
 
   .product-testimonials .section-header__description {
@@ -297,7 +298,6 @@
   .testimonial-card--framed {
     border: 1px solid rgba(129, 129, 129, 0.1);
     border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
 
   .testimonial-card__image-wrapper {
@@ -350,6 +350,7 @@
   .testimonial-card__author {
     display: flex;
     align-items: center;
+    height: 2.57rem;
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1.5rem;
@@ -395,8 +396,8 @@
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    padding-top: 2rem;
-    margin-top: 2rem;
+    padding-top: 3rem;
+    margin-top: 2.2rem;
     border-top: 1px solid rgba(18, 18, 18, 0.08);
     transition: opacity 0.2s ease;
   }
@@ -418,7 +419,6 @@
     overflow: hidden;
     flex-shrink: 0;
     background: #eaeaea;
-    border: 1px solid rgba(18, 18, 18, 0.06);
   }
 
   .testimonial-product__image {
@@ -433,11 +433,11 @@
   }
 
   .testimonial-product__title {
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 500;
     color: #111111;
-    margin: 0 0 0.4rem;
-    line-height: 1.35;
+    margin: 0 0 0.5rem;
+    line-height: 1.22;
     display: -webkit-box;
     line-clamp: 2;
     -webkit-line-clamp: 2;
@@ -446,9 +446,10 @@
   }
 
   .testimonial-product__price {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 500;
-    color: #666666;
+    height: 18.4px;
+    color: #111111;
   }
 
   /* Layout Position Options */
@@ -523,20 +524,23 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
     background: #ffffff;
-    border: 1px solid rgba(18, 18, 18, 0.12);
-    color: #333333;
+    border: 1px solid rgba(38, 38, 38, 0.12);
+    color: #111111;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     z-index: 2;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     padding: 0;
+  }
+
+  .testimonials-slider__btn:hover {
+    color: #ffffff;
+    background-color: #111111;
   }
 
   @media screen and (min-width: 750px) {

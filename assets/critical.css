@@ -151,7 +151,7 @@ a {
 }
 
 .section-inner--fluid {
-  max-width: min(140rem, calc(100% - var(--page-margin) * 2));
+  max-width: min(141rem, calc(100% - var(--page-margin) * 2));
 }
 
 .section-inner--full {
