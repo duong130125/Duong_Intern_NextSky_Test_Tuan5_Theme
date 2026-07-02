@@ -55,7 +55,7 @@
     "header": {
       "type": "header",
       "blocks": {
-        "menu_badge_cQgqj9": {
+        "menu_badge_Qm7XRE": {
           "type": "menu_badge",
           "settings": {
             "menu_item": "Sale",
@@ -65,7 +65,7 @@
         }
       },
       "block_order": [
-        "menu_badge_cQgqj9"
+        "menu_badge_Qm7XRE"
       ],
       "settings": {
         "section_width": "stretch",
