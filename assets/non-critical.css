@@ -1,0 +1,36 @@
+/* Non-critical CSS loaded after initial render.
+   This file should include styles that are not required for first paint.
+   Keep it lean and split per section whenever possible. */
+
+/* Section spacing utilities */
+.section-inner--fluid {
+  max-width: min(141rem, calc(100% - var(--page-margin) * 2));
+}
+
+.section-inner--full {
+  max-width: 100%;
+  width: 100%;
+}
+
+.section-inner--no-spacing {
+  margin-block: 0 !important;
+}
+
+/* Responsive spacing helpers */
+@media screen and (min-width: 768px) {
+  .site-header__inner {
+    padding-inline: 3rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .site-header__inner {
+    padding-inline: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .site-header__inner {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+}

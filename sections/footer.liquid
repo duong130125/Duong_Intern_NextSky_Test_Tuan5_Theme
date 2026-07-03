@@ -373,7 +373,7 @@
     background: #1c1c1c;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 575px) {
     .site-footer__newsletter-field {
       flex-direction: column;
       align-items: stretch;
@@ -483,7 +483,7 @@
   }
 
   /* Tablet: 2 columns */
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .site-footer__grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -496,8 +496,8 @@
     }
   }
 
-  /* Desktop: 4 columns with proper proportions */
-  @media screen and (min-width: 990px) {
+  /* Desktop small: 4 columns with proper proportions */
+  @media screen and (min-width: 1025px) {
     .site-footer__grid {
       grid-template-columns: 1.9fr 0.9fr 0.8fr 2fr;
       gap: 4rem;

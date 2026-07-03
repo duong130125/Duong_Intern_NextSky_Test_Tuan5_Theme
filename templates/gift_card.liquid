@@ -8,6 +8,10 @@
 
     {% # Load and preload the critical CSS %}
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
+    <link rel="stylesheet" href="{{ 'non-critical.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="{{ 'non-critical.css' | asset_url }}">
+    </noscript>
 
     {% # Social, title, etc. %}
     {% render 'meta-tags' %}
