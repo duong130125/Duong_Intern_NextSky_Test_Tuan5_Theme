@@ -37,9 +37,6 @@
       max-width: 1860px;
       width: 1860px;
     }
-    .image-comparison--{{ section.id }} .image-comparison__slider {
-      aspect-ratio: 1860 / 800;
-    }
   }
 {%- endstyle -%}
 
@@ -280,6 +277,7 @@
     color: #000000;
     cursor: grab;
     pointer-events: auto;
+    touch-action: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     flex-shrink: 0;
@@ -389,13 +387,35 @@
         handleEl.style.left = percent + '%';
       }
 
+      function addDragListeners() {
+        document.addEventListener('mousemove', onPointerMove);
+        document.addEventListener('touchmove', onPointerMove, { passive: false });
+        document.addEventListener('mouseup', onPointerUp);
+        document.addEventListener('touchend', onPointerUp);
+      }
+
+      function removeDragListeners() {
+        document.removeEventListener('mousemove', onPointerMove);
+        document.removeEventListener('touchmove', onPointerMove, { passive: false });
+        document.removeEventListener('mouseup', onPointerUp);
+        document.removeEventListener('touchend', onPointerUp);
+      }
+
+      function preventDragStart(e) {
+        e.preventDefault();
+      }
+
       function onPointerDown(e) {
         isDragging = true;
         rect = container.getBoundingClientRect();
         container.style.cursor = 'col-resize';
+        if (e.type === 'touchstart') {
+          e.preventDefault();
+        }
         const clientX =
           e.clientX !== undefined ? e.clientX : e.touches && e.touches[0] ? e.touches[0].clientX : undefined;
         updatePosition(clientX);
+        addDragListeners();
       }
 
       function onPointerMove(e) {
@@ -406,16 +426,15 @@
       }
 
       function onPointerUp() {
+        if (!isDragging) return;
         isDragging = false;
         container.style.cursor = 'col-resize';
+        removeDragListeners();
       }
 
       container.addEventListener('mousedown', onPointerDown);
-      container.addEventListener('touchstart', onPointerDown, { passive: true });
-      document.addEventListener('mousemove', onPointerMove);
-      document.addEventListener('touchmove', onPointerMove, { passive: true });
-      document.addEventListener('mouseup', onPointerUp);
-      document.addEventListener('touchend', onPointerUp);
+      container.addEventListener('touchstart', onPointerDown, { passive: false });
+      container.addEventListener('dragstart', preventDragStart);
 
       /* Keyboard support for the handle button */
       const btn = handleEl.querySelector('button');
