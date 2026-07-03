@@ -240,14 +240,14 @@
         "color_scheme": "",
         "heading": "Customer Say!",
         "description": "<p>Customers love our products and we always strive to please them all.</p>",
-        "header_size": "medium",
+        "header_size": "large",
         "alignment": "center",
         "show_verified": true,
         "show_image": true,
         "image_position": "left",
         "image_width": 35,
         "framed": true,
-        "rate_color": "#FF9C05",
+        "rate_color": "#ff9c05",
         "items_desktop": 2,
         "column_gap": 30,
         "show_nav": true,
@@ -279,7 +279,7 @@
         "image_ratio": "custom",
         "custom_ratio": "1860/800",
         "padding_top": 0,
-        "padding_bottom": 104,
+        "padding_bottom": 100,
         "remove_section_spacing": true
       }
     }
