@@ -189,7 +189,7 @@
         "show_breadcrumb": true,
         "heading": "Help Center",
         "description": "<p>Please use the below form. You can also call customer service on +1(973) 435-3638.</p>",
-        "header_size": "large",
+        "header_size": "medium",
         "alignment": "center",
         "padding_top": 40,
         "padding_bottom": 100,
