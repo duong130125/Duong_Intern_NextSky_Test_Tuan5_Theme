@@ -174,15 +174,15 @@
   .image-comparison__slider {
     position: relative;
     overflow: hidden;
-    border-radius: 0.8rem;
+    border-radius: 20px;
     cursor: col-resize;
     user-select: none;
     -webkit-user-select: none;
   }
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1200px) {
     .full-width .image-comparison__slider {
-      border-radius: 0;
+      border-radius: 20px;
     }
   }
 
@@ -318,8 +318,47 @@
     z-index: 3;
   }
 
-  /* Mobile */
-  @media screen and (max-width: 767px) {
+  @media screen and (min-width: 1025px) and (max-width: 1199px) {
+    .image-comparison__content--50 {
+      max-width: 60%;
+    }
+
+    .image-comparison__content--66 {
+      max-width: 72%;
+    }
+
+    .image-comparison__content--75 {
+      max-width: 82%;
+    }
+
+    .image-comparison__content--left,
+    .image-comparison__content--right {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-comparison__handle-button {
+      width: 3.8rem;
+      height: 7rem;
+    }
+
+    .image-comparison__label {
+      font-size: 1.4rem;
+      max-width: 10rem;
+      bottom: 1.5rem;
+      line-height: 1.4;
+    }
+
+    .image-comparison__before .image-comparison__label--before {
+      left: 2.5rem;
+    }
+
+    .image-comparison__after .image-comparison__label--after {
+      right: 2.5rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
     .image-comparison__content--50,
     .image-comparison__content--66,
     .image-comparison__content--75 {
@@ -333,8 +372,118 @@
     }
 
     .image-comparison__handle-button {
-      width: 4.5rem;
-      height: 8rem;
+      width: 3.4rem;
+      height: 6.4rem;
+    }
+
+    .image-comparison__label {
+      font-size: 1.3rem;
+      max-width: 9rem;
+      bottom: 1.2rem;
+      line-height: 1.4;
+    }
+
+    .image-comparison__before .image-comparison__label--before {
+      left: 2rem;
+    }
+
+    .image-comparison__after .image-comparison__label--after {
+      right: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    .image-comparison__content--50,
+    .image-comparison__content--66,
+    .image-comparison__content--75 {
+      max-width: 100%;
+    }
+
+    .image-comparison__content--left,
+    .image-comparison__content--right {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-comparison__handle-button {
+      width: 3rem;
+      height: 6rem;
+    }
+
+    .image-comparison__label {
+      font-size: 1.2rem;
+      max-width: 8.5rem;
+      bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .image-comparison__before .image-comparison__label--before {
+      left: 1.5rem;
+    }
+
+    .image-comparison__after .image-comparison__label--after {
+      right: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .shopify-section > .image-comparison,
+    .image-comparison {
+      grid-column: 1 / -1 !important;
+      justify-self: stretch !important;
+      width: 100% !important;
+      margin-inline: 0 !important;
+      padding-inline: 0 !important;
+    }
+
+    .shopify-section > .image-comparison .image-comparison__inner,
+    .image-comparison__inner,
+    .image-comparison__inner.section-inner--default,
+    .image-comparison__inner.section-inner--fluid,
+    .image-comparison__inner.section-inner--full {
+      max-width: none !important;
+      width: 100% !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+      margin-inline: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .image-comparison__content--50,
+    .image-comparison__content--66,
+    .image-comparison__content--75 {
+      max-width: 100%;
+    }
+
+    .image-comparison__content--left,
+    .image-comparison__content--right {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-comparison__handle-button {
+      width: 3rem;
+      height: 6rem;
+    }
+
+    .image-comparison__label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #000000;
+      bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .image-comparison__before .image-comparison__label--before {
+      left: 2rem;
+      text-align: left;
+      z-index: 3;
+    }
+
+    .image-comparison__after .image-comparison__label--after {
+      right: 2rem;
+      text-align: right;
+      z-index: 1;
     }
   }
 

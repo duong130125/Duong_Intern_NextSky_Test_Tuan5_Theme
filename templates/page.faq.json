@@ -110,8 +110,12 @@
         "question_3",
         "question_4",
         "category_payment",
+        "question_5",
+        "question_6",
         "category_returns",
-        "category_ordering"
+        "question_7",
+        "category_ordering",
+        "question_8"
       ],
       "settings": {
         "section_width": "default",
