@@ -624,10 +624,6 @@
       box-sizing: border-box !important;
     }
 
-    .testimonial-card--framed {
-      border-radius: 1.2rem;
-    }
-
     .testimonial-card__content {
       padding: 2.5rem 3rem 3rem;
     }
@@ -734,10 +730,12 @@
       font-size: 1.5rem;
     }
 
-    /* Sửa lỗi ẩn ảnh và bổ sung selector ẩn nút slider thực tế của theme */
+    .testimonials-slider__pagination--dots_mobile {
+      display: flex !important;
+    }
+
     .testimonial-card .testimonial-card__image-wrapper, 
     .testimonial-card__image-wrapper.testimonial-card__image-wrapper,
-    .testimonials-slider button,
     .testimonials-slider__btn { 
       display: none !important; 
     }
@@ -748,7 +746,7 @@
     }
   }
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 575.98px) {
     .shopify-section > .product-testimonials,
     .product-testimonials {
       grid-column: 1 / -1 !important;
@@ -800,7 +798,7 @@
 
   /* Pagination styles */
   .testimonials-slider__pagination {
-    margin-top: 2.4rem;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -808,12 +806,12 @@
 
   .testimonials-slider__dots {
     display: flex;
-    gap: 0.8rem;
+    gap: 1.5rem;
   }
 
   .testimonials-slider__dot {
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 0.5rem;
+    height: 0.5rem;
     border-radius: 50%;
     background: #e0e0e0;
     border: 0;
